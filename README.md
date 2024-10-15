@@ -79,3 +79,5 @@ npm run dev
 - [sonner](https://www.npmjs.com/package/sonner)
 - [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
 - [usehooks-ts](https://www.npmjs.com/package/usehooks-ts)
+
+git push --set-upstream origin main
