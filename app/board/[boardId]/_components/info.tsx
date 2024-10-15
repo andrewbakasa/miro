@@ -53,7 +53,7 @@ export const Info = ({ boardId }: InfoProps) => {
                 font.className
               )}
             >
-              Miro Clone
+              Planning board
             </span>
           </Link>
         </Button>

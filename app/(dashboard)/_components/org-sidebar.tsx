@@ -24,7 +24,7 @@ export const OrgSidebar = () => {
         <div className="flex items-center gap-x-2">
           <Image src="/logo.svg" alt="Logo" height={24} width={24} />
           <span className={cn("font-semibold text-2xl", font.className)}>
-            Miro Clone
+            Planning body
           </span>
         </div>
       </Link>

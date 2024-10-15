@@ -3,6 +3,7 @@ import { NoteLayer } from "@/types/canvas";
 import { useMutation } from "@/liveblocks.config";
 import { Kalam } from "next/font/google";
 import ContentEditable, { ContentEditableEvent } from "react-contenteditable";
+import { useState } from "react";
 
 const font = Kalam({ subsets: ["latin"], weight: "400" });
 
@@ -38,7 +39,22 @@ export const Note = ({
 
   const handleContentChange = (e: ContentEditableEvent) => {
     updateValue(e.target.value);
+    //hold text without changing
+    if (e.target.value=== '') {
+      handleDelay();
+    }
   };
+  // const [value, setValue] = useState('');
+  const [isDelayActive, setIsDelayActive] = useState(false);
+
+
+  const handleDelay = () => {
+    setIsDelayActive(true);
+    setTimeout(() => {
+      setIsDelayActive(false);
+    }, 10000);
+  };
+
 
   return (
     <foreignObject
@@ -54,7 +70,8 @@ export const Note = ({
       className="shadow-md drop-shadow-xl"
     >
       <ContentEditable
-        html={value || "Text"}
+        // html={value || "Text"}
+        html={value || (isDelayActive ? "Text" : "")}
         onChange={handleContentChange}
         className={cn(
           "h-full w-full flex items-center justify-center outline-none",
