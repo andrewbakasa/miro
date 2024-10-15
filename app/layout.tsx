@@ -10,7 +10,7 @@ import { Loading } from "@/components/auth/loading";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Planning Board",
+  title: "PlanX",
   description: "Miro Clone web app created with Nextjs.",
   icons: {
     icon: [{ url: "/logo.svg", href: "/logo.svg" }],

@@ -53,7 +53,7 @@ export const Info = ({ boardId }: InfoProps) => {
                 font.className
               )}
             >
-              Planning board
+              PlanX
             </span>
           </Link>
         </Button>

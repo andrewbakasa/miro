@@ -71,7 +71,7 @@ export const Note = ({
     >
       <ContentEditable
         // html={value || "Text"}
-        html={value || (isDelayActive ? "Text" : "")}
+        html={value || (!isDelayActive ? "Text" : "")}
         onChange={handleContentChange}
         className={cn(
           "h-full w-full flex items-center justify-center outline-none",
