@@ -451,7 +451,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
       />
       <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
       <svg
-        className="h-[100vh] w-[100vw] bg-white shadow-md"
+        className="h-[100vh] w-[100vw] bg-yellow-200 shadow-md"
         onWheel={onWheel}
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
