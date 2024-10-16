@@ -457,22 +457,29 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         onPointerLeave={onPointerLeave}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
+        style={{
+          overflow: 'auto',
+          scrollbarWidth: 'thin',
+          scrollbarColor: 'gray lightgray', // Customize colors
+          color:'yellow',
+          backgroundColor:'red',
+        }}
       >
         <g
-          // style={{
-          //   transform: `translate(${camera.x}px, ${camera.y}px)`,
-          // }}
-          className=" bg-yellow-200 shadow-md"
-     
-
           style={{
-            overflow: 'auto',
-            scrollbarWidth: 'thin',
-            scrollbarColor: 'gray lightgray', // Customize colors
-            color:'yellow',
-            backgroundColor:'red',
             transform: `translate(${camera.x}px, ${camera.y}px)`,
           }}
+          // className=" bg-yellow-200 shadow-md"
+     
+
+          // style={{
+          //   overflow: 'auto',
+          //   scrollbarWidth: 'thin',
+          //   scrollbarColor: 'gray lightgray', // Customize colors
+          //   color:'yellow',
+          //   backgroundColor:'red',
+          //   transform: `translate(${camera.x}px, ${camera.y}px)`,
+          // }}
         >
           {layerIds.map((layerId) => (
             <LayerPreview
