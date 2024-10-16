@@ -462,7 +462,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
           scrollbarWidth: 'thin',
           scrollbarColor: 'gray lightgray', // Customize colors
           color:'yellow',
-          backgroundColor:'red',
+          // backgroundColor:'red',
         }}
       >
         <g
