@@ -451,7 +451,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
       />
       <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
       <svg
-        className="h-[100vh] w-[100vw] bg-yellow-200 shadow-md"
+        className="h-[100vh] w-[100vw]"
         onWheel={onWheel}
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
@@ -462,6 +462,8 @@ export const Canvas = ({ boardId }: CanvasProps) => {
           // style={{
           //   transform: `translate(${camera.x}px, ${camera.y}px)`,
           // }}
+          className=" bg-yellow-200 shadow-md"
+     
 
           style={{
             overflow: 'auto',
