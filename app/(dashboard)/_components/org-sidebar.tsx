@@ -28,6 +28,7 @@ export const OrgSidebar = () => {
           </span>
         </div>
       </Link>
+      {/* only admins have access here.. */}
       <OrganizationSwitcher
         hidePersonal
         appearance={{
