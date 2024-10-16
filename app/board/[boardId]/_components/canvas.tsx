@@ -469,6 +469,8 @@ export const Canvas = ({ boardId }: CanvasProps) => {
             overflow: 'auto',
             scrollbarWidth: 'thin',
             scrollbarColor: 'gray lightgray', // Customize colors
+            color:'yellow',
+            backgroundColor:'red',
             transform: `translate(${camera.x}px, ${camera.y}px)`,
           }}
         >
