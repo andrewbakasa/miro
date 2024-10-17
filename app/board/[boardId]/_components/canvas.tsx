@@ -450,67 +450,69 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         redo={history.redo}
       />
       <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
-      <svg
-        className="h-[100vh] w-[100vw]"
-        onWheel={onWheel}
-        onPointerMove={onPointerMove}
-        onPointerLeave={onPointerLeave}
-        onPointerDown={onPointerDown}
-        onPointerUp={onPointerUp}
-        // style={{
-        //   overflow: 'auto',
-        //   scrollbarWidth: 'thin',
-        //   scrollbarColor: 'gray lightgray', // Customize colors
-        //   color:'yellow',
-        //   // backgroundColor:'red',
-        // }}
-      >
-        <g
-          style={{
-            transform: `translate(${camera.x}px, ${camera.y}px)`,
-          }}
-          // className=" bg-yellow-200 shadow-md"
-     
-
+      <div className="overflow-auto">
+        <svg
+          className="h-[100vh] w-[100vw]"
+          onWheel={onWheel}
+          onPointerMove={onPointerMove}
+          onPointerLeave={onPointerLeave}
+          onPointerDown={onPointerDown}
+          onPointerUp={onPointerUp}
           // style={{
           //   overflow: 'auto',
           //   scrollbarWidth: 'thin',
           //   scrollbarColor: 'gray lightgray', // Customize colors
           //   color:'yellow',
-          //   backgroundColor:'red',
-          //   transform: `translate(${camera.x}px, ${camera.y}px)`,
+          //   // backgroundColor:'red',
           // }}
         >
-          {layerIds.map((layerId) => (
-            <LayerPreview
-              key={layerId}
-              id={layerId}
-              onLayerPointerDown={onLayerPointerDown}
-              selectionColor={layerIdsToColorSelection[layerId]}
-            />
-          ))}
-          {canvasState.mode === CanvasMode.SelectionNet &&
-            canvasState.current != null && (
-              <rect
-                className="fill-blue-500/5 stroke-blue-500 stroke-1"
-                x={Math.min(canvasState.origin.x, canvasState.current.x)}
-                y={Math.min(canvasState.origin.y, canvasState.current.y)}
-                width={Math.abs(canvasState.origin.x - canvasState.current.x)}
-                height={Math.abs(canvasState.origin.y - canvasState.current.y)}
+          <g
+            style={{
+              transform: `translate(${camera.x}px, ${camera.y}px)`,
+            }}
+            // className=" bg-yellow-200 shadow-md"
+      
+
+            // style={{
+            //   overflow: 'auto',
+            //   scrollbarWidth: 'thin',
+            //   scrollbarColor: 'gray lightgray', // Customize colors
+            //   color:'yellow',
+            //   backgroundColor:'red',
+            //   transform: `translate(${camera.x}px, ${camera.y}px)`,
+            // }}
+          >
+            {layerIds.map((layerId) => (
+              <LayerPreview
+                key={layerId}
+                id={layerId}
+                onLayerPointerDown={onLayerPointerDown}
+                selectionColor={layerIdsToColorSelection[layerId]}
+              />
+            ))}
+            {canvasState.mode === CanvasMode.SelectionNet &&
+              canvasState.current != null && (
+                <rect
+                  className="fill-blue-500/5 stroke-blue-500 stroke-1"
+                  x={Math.min(canvasState.origin.x, canvasState.current.x)}
+                  y={Math.min(canvasState.origin.y, canvasState.current.y)}
+                  width={Math.abs(canvasState.origin.x - canvasState.current.x)}
+                  height={Math.abs(canvasState.origin.y - canvasState.current.y)}
+                />
+              )}
+            <SelectionBox onResizeHandlePointerDown={onResizeHandlePointerDown} />
+            <CursorsPresence />
+            {pencilDraft != null && pencilDraft.length > 0 && (
+              <Path
+                points={pencilDraft}
+                fill={colorToCss(lastUsedColor)}
+                x={0}
+                y={0}
               />
             )}
-          <SelectionBox onResizeHandlePointerDown={onResizeHandlePointerDown} />
-          <CursorsPresence />
-          {pencilDraft != null && pencilDraft.length > 0 && (
-            <Path
-              points={pencilDraft}
-              fill={colorToCss(lastUsedColor)}
-              x={0}
-              y={0}
-            />
-          )}
-        </g>
-      </svg>
+          </g>
+        </svg>
+      </div>
     </main>
   );
 };
