@@ -452,7 +452,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
       <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
       {/* <div className="overflow-auto"> */}
         <svg
-          className="h-[100vh] w-[100vw] overflow-auto"
+          className="h-[100vh] w-[100vw]"
           onWheel={onWheel}
           onPointerMove={onPointerMove}
           onPointerLeave={onPointerLeave}
@@ -467,20 +467,20 @@ export const Canvas = ({ boardId }: CanvasProps) => {
           // }}
         >
           <g
-            style={{
-              transform: `translate(${camera.x}px, ${camera.y}px)`,
-            }}
+            // style={{
+            //   transform: `translate(${camera.x}px, ${camera.y}px)`,
+            // }}
             // className=" bg-yellow-200 shadow-md"
       
 
-            // style={{
-            //   overflow: 'auto',
-            //   scrollbarWidth: 'thin',
-            //   scrollbarColor: 'gray lightgray', // Customize colors
-            //   color:'yellow',
-            //   backgroundColor:'red',
-            //   transform: `translate(${camera.x}px, ${camera.y}px)`,
-            // }}
+            style={{
+              overflow: 'auto',
+              scrollbarWidth: 'thin',
+              scrollbarColor: 'gray lightgray', // Customize colors
+              // color:'yellow',
+              // backgroundColor:'red',
+              transform: `translate(${camera.x}px, ${camera.y}px)`,
+            }}
           >
             {layerIds.map((layerId) => (
               <LayerPreview
