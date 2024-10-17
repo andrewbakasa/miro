@@ -457,13 +457,13 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         onPointerLeave={onPointerLeave}
         onPointerDown={onPointerDown}
         onPointerUp={onPointerUp}
-        style={{
-          overflow: 'auto',
-          scrollbarWidth: 'thin',
-          scrollbarColor: 'gray lightgray', // Customize colors
-          color:'yellow',
-          // backgroundColor:'red',
-        }}
+        // style={{
+        //   overflow: 'auto',
+        //   scrollbarWidth: 'thin',
+        //   scrollbarColor: 'gray lightgray', // Customize colors
+        //   color:'yellow',
+        //   // backgroundColor:'red',
+        // }}
       >
         <g
           style={{
