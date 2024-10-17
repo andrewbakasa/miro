@@ -450,9 +450,9 @@ export const Canvas = ({ boardId }: CanvasProps) => {
         redo={history.redo}
       />
       <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
-      <div className="overflow-auto">
+      {/* <div className="overflow-auto"> */}
         <svg
-          className="h-[100vh] w-[100vw]"
+          className="h-[100vh] w-[100vw] overflow-auto"
           onWheel={onWheel}
           onPointerMove={onPointerMove}
           onPointerLeave={onPointerLeave}
@@ -512,7 +512,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
             )}
           </g>
         </svg>
-      </div>
+      {/* </div> */}
     </main>
   );
 };
