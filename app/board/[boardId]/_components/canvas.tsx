@@ -453,7 +453,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
       {/* <div className="overflow-auto"> */}
         <svg
           className="h-[100vh] w-[100vw]"
-          overflow='auto'
+          // overflow='auto'
           onWheel={onWheel}
           onPointerMove={onPointerMove}
           onPointerLeave={onPointerLeave}
