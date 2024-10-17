@@ -452,7 +452,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
       <SelectionTools camera={camera} setLastUsedColor={setLastUsedColor} />
       {/* <div className="overflow-auto"> */}
         <svg
-          className="h-full w-full"
+          className="h-[100vh] w-[100vw] overflow-auto"
           onWheel={onWheel}
           onPointerMove={onPointerMove}
           onPointerLeave={onPointerLeave}
