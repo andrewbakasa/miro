@@ -438,7 +438,7 @@ export const Canvas = ({ boardId }: CanvasProps) => {
   }, [deleteLayers, history]);
 
   return (
-    <main className="h-full w-full bg-neutral-100 relative touch-none">
+    <main className="overflow-auto bg-neutral-100 relative touch-none">
       <Info boardId={boardId} />
       <Participants />
       <Toolbar
